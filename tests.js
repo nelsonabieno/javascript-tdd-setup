@@ -2,23 +2,23 @@
 
 var chai = require('chai');
 var assert = chai.assert;
+//2,3,5 string input, -ve inputs
+var lib = require('./lib/sumofprimes.js');
 
-var lib = require('./lib/library.js');
+describe("Test that sums up all the prime numbers from 1 to n", function() {
+  it("should give 10 for prime nos between 1 and 5", function() {
+    assert(lib.sumofprimes(5)==10);
+  
+  });
 
-describe("Test that constants are computed properly", function() {
-  it("should give 10, 4 for constants 2, 5 as a and n respectively", function() {
-    assert(
-      lib.compareCoefficients(lib.quadraticDerivative(2, 5), { a: 10, n: 4 })
-    );
+  it("should give 17 for prime nos between 1 and 10", function() {
+    assert(lib.sumofprimes(10)==17);
+  
   });
-  it("should give 2, 1 for constants 1, 2 as a and n respectively", function() {
-    assert(
-      lib.compareCoefficients(lib.quadraticDerivative(1, 2), { a: 2, n: 1 })
-    );
+
+  it("should give invalid string for a string input", function() {
+    assert(lib.sumofprimes("mystring")==false);
+  
   });
-  it("should give 8, 1 for constants 4, 2 as a and n respectively", function() {
-    assert(
-      lib.compareCoefficients(lib.quadraticDerivative(4, 2), { a: 8, n: 1 })
-    );
-  });
+  
 });
