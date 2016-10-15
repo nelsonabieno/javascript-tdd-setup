@@ -21,8 +21,18 @@ describe("Test that sums up all the prime numbers from 1 to n", function() {
   
   });
 
-   it("should give invalid parameter for an array input", function() {
+  it("should give invalid parameter for an array input", function() {
     assert(lib.sumofprimes([2,4])==false);
+  
+  });
+
+  it("should output 0 if zero is supplied", function() {
+    assert(lib.sumofprimes(-4)==false);
+  
+  });
+
+  it("should output 0 if zero is supplied", function() {
+    assert(lib.sumofprimes(0)==0);
   
   });
   
